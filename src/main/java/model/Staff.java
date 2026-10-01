@@ -1,25 +1,66 @@
 package model;
 
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "staff")
 public class Staff {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, length = 100)
     private String nom;
+
+    @Column(nullable = false, length = 100)
     private String prenom;
+
+    @Column(nullable = false, unique = true, length = 150)
     private String email;
+
+    @Column(nullable = false)
     private String password;
-    private String role;
+
+    @Enumerated(EnumType.STRING) // save GENERALISTE note 1
+    @Column(nullable = false, length = 20)
+    private Role role;
+
     private String specialite;
-    private Double tarif;
+
+    @Column(precision = 10, scale = 2)
+    private BigDecimal tarif;
+
+    // Bidirectional
+    @OneToMany(mappedBy = "generaliste")
+    private List<Consultation> consultations = new ArrayList<>();
+
+    @OneToMany(mappedBy = "specialiste")
+    private List<Creneau> creneaux = new ArrayList<>();
+
+    @OneToMany(mappedBy = "specialiste")
+    private List<DemandeExpertise> demandesExpertise = new ArrayList<>();
 
     public Staff() {
     }
 
-    public Long getId() {
-        return id;
+    public Staff(String nom, String prenom, String email,
+                 String password, Role role,
+                 String specialite, BigDecimal tarif) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.specialite = specialite;
+        this.tarif = tarif;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Long getId() {
+        return id;
     }
 
     public String getNom() {
@@ -54,11 +95,11 @@ public class Staff {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -70,11 +111,11 @@ public class Staff {
         this.specialite = specialite;
     }
 
-    public Double getTarif() {
+    public BigDecimal getTarif() {
         return tarif;
     }
 
-    public void setTarif(Double tarif) {
+    public void setTarif(BigDecimal tarif) {
         this.tarif = tarif;
     }
 }
