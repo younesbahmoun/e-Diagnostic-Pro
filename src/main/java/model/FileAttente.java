@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
+import enums.StatutFileAttente;
+
 @Entity
 @Table(name = "file_attente")
 public class FileAttente {

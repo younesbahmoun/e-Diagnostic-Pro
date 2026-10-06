@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import enums.StatutCreneau;
+
 @Entity
 @Table(name = "creneaux")
 public class Creneau {

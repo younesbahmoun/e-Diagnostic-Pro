@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import enums.Role;
+
 @Entity
 @Table(name = "staff")
 public class Staff {
@@ -59,6 +61,7 @@ public class Staff {
         this.tarif = tarif;
     }
 
+    // getters and setters
     public Long getId() {
         return id;
     }

@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
+import enums.PrioriteExpertise;
+import enums.StatutExpertise;
+
 @Entity
 @Table(name = "demandes_expertise")
 public class DemandeExpertise {

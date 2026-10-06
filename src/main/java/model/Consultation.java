@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import enums.StatutConsultation;
+
 @Entity
 @Table(name = "consultations")
 public class Consultation {
