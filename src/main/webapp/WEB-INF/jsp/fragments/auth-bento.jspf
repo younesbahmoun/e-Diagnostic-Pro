@@ -1,0 +1,54 @@
+<%@ page pageEncoding="UTF-8" %>
+<aside class="bento-grid" aria-label="À propos de TéléExpertise">
+    <section class="bento-card hero-card">
+        <p class="card-kicker"><svg class="icon" aria-hidden="true"><use href="#icon-pulse"/></svg> LA SANTÉ SE CONSTRUIT ENSEMBLE</p>
+        <c:choose>
+            <c:when test="${registerPage}">
+                <h2 class="hero-title">Votre expertise.<br><em>Notre collectif.</em></h2>
+                <p class="hero-description">Rejoignez un espace pensé pour les soignants. Partagez votre expertise, au service de chaque patient.</p>
+            </c:when>
+            <c:otherwise>
+                <h2 class="hero-title">Mieux connectés.<br><em>Pour mieux soigner.</em></h2>
+                <p class="hero-description">Le lien entre les professionnels de santé, pour un parcours de soins plus simple et plus humain.</p>
+            </c:otherwise>
+        </c:choose>
+        <svg class="connection-art" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+            <circle cx="150" cy="150" r="124" stroke="#e1dcc9" stroke-opacity=".12"/>
+            <circle cx="150" cy="150" r="94" stroke="#e1dcc9" stroke-opacity=".18" stroke-dasharray="3 7"/>
+            <circle cx="150" cy="150" r="65" stroke="#e1dcc9" stroke-opacity=".16"/>
+            <path d="m62 62 53 53m70 70 53 53M62 238l53-53m70-70 53-53" stroke="#e1dcc9" stroke-opacity=".2"/>
+            <rect x="106" y="106" width="88" height="88" rx="26" fill="#412d15" stroke="#e1dcc9" stroke-opacity=".3" transform="rotate(-12 150 150)"/>
+            <path d="M142 127h16v15h15v16h-15v15h-16v-15h-15v-16h15z" fill="#e1dcc9"/>
+            <circle cx="62" cy="62" r="17" fill="#1f150c" stroke="#e1dcc9" stroke-opacity=".4"/>
+            <circle cx="62" cy="58" r="4" stroke="#e1dcc9" stroke-width="1.5"/><path d="M55 69a7 7 0 0 1 14 0" stroke="#e1dcc9" stroke-width="1.5"/>
+            <circle cx="238" cy="62" r="12" fill="#e1dcc9"/><path d="m233 62 3 3 6-6" stroke="#1f150c" stroke-width="1.5"/>
+            <circle cx="62" cy="238" r="6" fill="#e1dcc9"/>
+            <circle cx="238" cy="238" r="18" fill="#412d15" stroke="#e1dcc9" stroke-opacity=".3"/>
+            <path d="M228 238h6l3-6 3 12 3-6h5" stroke="#e1dcc9" stroke-width="1.5"/>
+            <circle cx="150" cy="26" r="4" fill="#e1dcc9" fill-opacity=".5"/>
+            <circle cx="26" cy="150" r="4" fill="#e1dcc9" fill-opacity=".5"/>
+        </svg>
+        <div class="hero-bottom"><span></span> Le lien au service du soin</div>
+    </section>
+    <section class="bento-card team-card">
+        <div class="team-top">
+            <div class="team-avatars" aria-hidden="true"><span class="team-avatar">INF</span><span class="team-avatar">MG</span><span class="team-avatar">SP</span></div>
+            <svg class="icon" aria-hidden="true"><use href="#icon-diagonal"/></svg>
+        </div>
+        <h2>Trois métiers.<br>Un même horizon.</h2>
+        <p class="card-caption">Infirmiers, généralistes et spécialistes.</p>
+    </section>
+    <section class="bento-card expertise-card">
+        <div class="expertise-top"><svg class="icon" aria-hidden="true"><use href="#icon-stethoscope"/></svg><span class="card-number">01 — 03</span></div>
+        <h2>L'expertise,<br>sans la distance.</h2>
+        <p class="card-caption">Un avis spécialisé. Un soin éclairé.</p>
+    </section>
+    <section class="bento-card journey-card">
+        <div><span class="journey-label">Le patient, au cœur du parcours.</span><p class="journey-description">Accueillir. Consulter. Collaborer.</p></div>
+        <div class="journey-flow" aria-hidden="true">
+            <span class="flow-node"><svg class="icon"><use href="#icon-person"/></svg></span><span class="flow-line"></span>
+            <span class="flow-node"><svg class="icon"><use href="#icon-stethoscope"/></svg></span><span class="flow-line"></span>
+            <span class="flow-node"><svg class="icon"><use href="#icon-cross"/></svg></span>
+        </div>
+    </section>
+</aside>

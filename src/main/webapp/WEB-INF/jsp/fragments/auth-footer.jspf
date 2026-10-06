@@ -1,0 +1,5 @@
+<%@ page pageEncoding="UTF-8" %>
+<footer class="site-footer">
+    <span>TéléExpertise &copy; <%= java.time.Year.now().getValue() %></span>
+    <span class="footer-note"><svg class="icon" aria-hidden="true"><use href="#icon-cross"/></svg> Pensé pour les soignants. Au service des patients.</span>
+</footer>

@@ -1,0 +1,19 @@
+<%@ page pageEncoding="UTF-8" %>
+<header class="site-header">
+    <a class="brand" href="${pageContext.request.contextPath}/login" aria-label="TéléExpertise — accueil connexion">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#icon-cross"/></svg></span>
+        <span class="brand-name">Télé<span>Expertise</span></span>
+    </a>
+    <div class="header-action">
+        <c:choose>
+            <c:when test="${registerPage}">
+                <span>Déjà membre du collectif ?</span>
+                <a class="text-link" href="${pageContext.request.contextPath}/login">Se connecter <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+            </c:when>
+            <c:otherwise>
+                <span>Votre première visite ?</span>
+                <a class="text-link" href="${pageContext.request.contextPath}/register">Nous rejoindre <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+            </c:otherwise>
+        </c:choose>
+    </div>
+</header>
