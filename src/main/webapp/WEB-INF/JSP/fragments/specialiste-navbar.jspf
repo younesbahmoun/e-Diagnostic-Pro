@@ -1,0 +1,19 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<header class="site-header">
+    <a class="brand" href="${pageContext.request.contextPath}/dashboard" aria-label="TéléExpertise — tableau de bord">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#icon-cross"/></svg></span>
+        <span class="brand-name">Télé<span>Expertise</span></span>
+    </a>
+    <nav class="infirmier-nav" aria-label="Navigation spécialiste">
+        <a href="${pageContext.request.contextPath}/dashboard" ${pageContext.request.servletPath == '/dashboard' ? 'aria-current="page"' : ''}>
+            <svg class="icon" aria-hidden="true"><use href="#icon-pulse"/></svg>Tableau de bord
+        </a>
+        <a href="${pageContext.request.contextPath}/specialiste/demandes" ${pageContext.request.servletPath == '/specialiste/demandes' ? 'aria-current="page"' : ''}>
+            <svg class="icon" aria-hidden="true"><use href="#icon-stethoscope"/></svg>Demandes reçues
+        </a>
+        <a href="${pageContext.request.contextPath}/logout">
+            <svg class="icon" aria-hidden="true"><use href="#icon-diagonal"/></svg>Déconnexion
+        </a>
+    </nav>
+</header>

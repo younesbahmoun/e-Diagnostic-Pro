@@ -1,0 +1,11 @@
+<%@ page pageEncoding="UTF-8" %>
+<header class="site-header">
+    <a class="brand" href="${pageContext.request.contextPath}/dashboard" aria-label="TéléExpertise — tableau de bord">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#icon-cross"/></svg></span>
+        <span class="brand-name">Télé<span>Expertise</span></span>
+    </a>
+    <nav class="patient-header-links" aria-label="Navigation principale">
+        <a class="text-link" href="${pageContext.request.contextPath}/dashboard">Tableau de bord</a>
+        <a class="text-link" href="${pageContext.request.contextPath}/logout">Déconnexion</a>
+    </nav>
+</header>

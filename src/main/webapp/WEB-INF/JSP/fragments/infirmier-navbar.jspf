@@ -1,0 +1,22 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<header class="site-header">
+    <a class="brand" href="${pageContext.request.contextPath}/dashboard" aria-label="TéléExpertise — tableau de bord">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#icon-cross"/></svg></span>
+        <span class="brand-name">Télé<span>Expertise</span></span>
+    </a>
+    <nav class="infirmier-nav" aria-label="Navigation infirmier">
+        <a href="${pageContext.request.contextPath}/dashboard" ${pageContext.request.servletPath == '/dashboard' ? 'aria-current="page"' : ''}>
+            <svg class="icon" aria-hidden="true"><use href="#icon-pulse"/></svg>Tableau de bord
+        </a>
+        <a href="${pageContext.request.contextPath}/infirmier/patient" ${pageContext.request.servletPath == '/infirmier/patient' ? 'aria-current="page"' : ''}>
+            <svg class="icon" aria-hidden="true"><use href="#icon-person"/></svg>Patient
+        </a>
+        <a href="${pageContext.request.contextPath}/infirmier/file-attente" ${pageContext.request.servletPath == '/infirmier/file-attente' ? 'aria-current="page"' : ''}>
+            <svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg>File d&rsquo;attente
+        </a>
+        <a href="${pageContext.request.contextPath}/logout">
+            <svg class="icon" aria-hidden="true"><use href="#icon-diagonal"/></svg>Déconnexion
+        </a>
+    </nav>
+</header>

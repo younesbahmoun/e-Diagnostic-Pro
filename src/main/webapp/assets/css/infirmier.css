@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/* Espace infirmier — même langage visuel que la page login (auth.css) :
+   mêmes couleurs, typographie, espacements, boutons et formulaires. */
+
+.infirmier-page .page-shell { max-width: 1280px; }
+
+.infirmier-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background: var(--black);
+}
+
+.infirmier-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 15px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: color .2s, background .2s;
+}
+
+.infirmier-nav a .icon { width: 15px; height: 15px; }
+.infirmier-nav a:hover { color: var(--ivory); background: var(--espresso); }
+.infirmier-nav a[aria-current="page"] { color: var(--espresso); background: var(--ivory); }
+
+.infirmier-intro { margin: 0 0 20px; max-width: 640px; }
+.infirmier-intro h1 { margin: 14px 0 12px; font-size: clamp(28px, 3.3vw, 40px); font-weight: 500; letter-spacing: -1.3px; line-height: 1.2; }
+.infirmier-intro h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+.infirmier-intro p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+
+.infirmier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.infirmier-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+
+.panel {
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(31, 21, 12, .42);
+    padding: 28px 30px;
+    min-width: 0;
+}
+
+.panel-accent { background: var(--espresso); }
+.panel-light { background: var(--ivory); color: var(--espresso); border-color: var(--ivory); }
+.panel-light p { color: rgba(31, 21, 12, .72); }
+
+.panel-kicker {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+}
+.panel-kicker .icon { width: 13px; height: 13px; }
+.panel-light .panel-kicker { color: rgba(31, 21, 12, .6); }
+
+.panel h2 { margin: 0 0 8px; font-size: 22px; font-weight: 500; letter-spacing: -.7px; line-height: 1.3; }
+.panel > p { margin: 0 0 20px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.panel-light > p { color: rgba(31, 21, 12, .72); }
+
+.action-card { display: block; transition: border-color .2s, transform .2s; }
+.action-card:hover { border-color: rgba(225, 220, 201, .4); transform: translateY(-1px); }
+.action-card .card-foot { display: inline-flex; align-items: center; gap: 9px; margin-top: 6px; font-size: 11px; font-weight: 600; }
+.action-card .card-foot .icon { width: 15px; height: 15px; transition: transform .2s; }
+.action-card:hover .card-foot .icon { transform: translateX(3px); }
+.action-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--black);
+}
+.action-icon .icon { width: 20px; height: 20px; }
+
+.stat { margin: 0; }
+.stat-value { display: block; font-size: 34px; font-weight: 500; letter-spacing: -1.2px; line-height: 1.1; }
+.stat-label { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+
+.panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.panel-head h2 { margin-bottom: 4px; }
+.panel-head p { margin: 0; color: var(--muted); font-size: 11px; }
+
+.search-form { display: flex; gap: 12px; align-items: flex-end; }
+.search-form .field { flex: 1; }
+.search-form .submit-button { width: auto; margin: 0; padding-left: 26px; padding-right: 26px; flex-shrink: 0; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 14px; }
+.form-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 14px; }
+.field-full { grid-column: 1 / -1; }
+.form-section-title {
+    grid-column: 1 / -1;
+    margin: 8px 0 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+textarea.field-input { min-height: 78px; height: auto; padding: 12px 15px; resize: vertical; line-height: 1.7; font-family: inherit; }
+.form-actions { grid-column: 1 / -1; display: flex; align-items: center; justify-content: flex-end; gap: 14px; margin-top: 6px; }
+.form-actions .submit-button { width: auto; margin: 0; padding-left: 28px; padding-right: 28px; }
+
+.found-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(225, 220, 201, .3);
+    border-radius: 9px;
+    background: var(--espresso);
+    font-size: 11px;
+    line-height: 1.7;
+}
+.found-banner .icon { width: 17px; height: 17px; flex-shrink: 0; }
+.patient-recap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+.patient-recap span { display: block; color: var(--muted); font-size: 10px; margin-bottom: 4px; }
+.patient-recap strong { font-size: 14px; font-weight: 600; }
+
+.table-wrap { overflow-x: auto; margin: 0 -30px -28px; padding: 0 30px 28px; }
+table.infirmier-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.infirmier-table th {
+    text-align: left;
+    padding: 10px 12px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+}
+.infirmier-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.infirmier-table tbody tr:last-child td { border-bottom: 0; }
+.infirmier-table tbody tr:hover td { background: rgba(225, 220, 201, .03); }
+.patient-cell strong { display: block; font-size: 13px; }
+.patient-cell span { color: var(--muted); font-size: 11px; }
+.status-pill {
+    display: inline-block;
+    padding: 5px 12px;
+    border: 1px solid rgba(225, 220, 201, .3);
+    border-radius: 999px;
+    background: var(--brown);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    white-space: nowrap;
+}
+.empty-state { padding: 34px 10px; text-align: center; color: var(--muted); font-size: 12px; line-height: 1.8; font-style: italic; }
+.btn-link { font-size: 11px; color: var(--ivory); text-decoration: underline; text-underline-offset: 4px; }
+
+@media (max-width: 900px) {
+    .infirmier-grid, .infirmier-grid-3 { grid-template-columns: 1fr; }
+    .site-header { flex-wrap: wrap; gap: 12px; padding: 18px 0; }
+}
+
+@media (max-width: 640px) {
+    .panel { padding: 22px 20px; border-radius: 18px; }
+    .form-grid, .form-grid-3 { grid-template-columns: 1fr; }
+    .patient-recap { grid-template-columns: 1fr; }
+    .search-form { flex-direction: column; align-items: stretch; }
+    .search-form .submit-button, .form-actions .submit-button { width: 100%; }
+    .form-actions { flex-direction: column-reverse; align-items: stretch; }
+    .infirmier-nav { width: 100%; overflow-x: auto; }
+    .table-wrap { margin: 0 -20px -22px; padding: 0 20px 22px; }
+}
