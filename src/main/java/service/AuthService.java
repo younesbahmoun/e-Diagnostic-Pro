@@ -1,6 +1,6 @@
 package service;
 
-import model.Staff;
+import model.Utilisateur;
 import org.mindrot.jbcrypt.BCrypt;
 import repository.AuthRepository;
 
@@ -14,8 +14,8 @@ public class AuthService {
         this.authRepository = new AuthRepository();
     }
 
-    public void register(Staff staff, String plainPassword) throws Exception {
-        Optional<Staff> existingStaff = authRepository.findByEmail(staff.getEmail());
+    public void register(Utilisateur staff, String plainPassword) throws Exception {
+        Optional<Utilisateur> existingStaff = authRepository.findByEmail(staff.getEmail());
         if (existingStaff.isPresent()) {
             throw new Exception("email incorrect !");
         }
@@ -26,14 +26,14 @@ public class AuthService {
         authRepository.save(staff);
     }
 
-    public Staff login(String email, String plainPassword) throws Exception {
-        Optional<Staff> optionalStaff = authRepository.findByEmail(email);
+    public Utilisateur login(String email, String plainPassword) throws Exception {
+        Optional<Utilisateur> optionalStaff = authRepository.findByEmail(email);
 
         if (optionalStaff.isEmpty()) {
             throw new Exception("Email incorrect.");
         }
 
-        Staff staff = optionalStaff.get();
+        Utilisateur staff = optionalStaff.get();
 
         boolean isPasswordMatch = BCrypt.checkpw(plainPassword, staff.getPassword());
 

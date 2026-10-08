@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import enums.Role;
-import model.Staff;
+import model.Utilisateur;
 import service.AuthService;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -18,7 +18,7 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/JSP/register.jsp").forward(request, response);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class RegisterServlet extends HttpServlet {
             String specialite = request.getParameter("specialite");
             String tarifStr = request.getParameter("tarif");
 
-            Staff staff = new Staff();
+            Utilisateur staff = new Utilisateur();
             staff.setNom(nom);
             staff.setPrenom(prenom);
             staff.setEmail(email);
@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
 
         } catch (Exception e) {
             request.setAttribute("errorMessage", e.getMessage());
-            request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/JSP/register.jsp").forward(request, response);
         }
     }
 }

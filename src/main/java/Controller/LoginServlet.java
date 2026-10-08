@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import model.Staff;
+import model.Utilisateur;
 import service.AuthService;
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/JSP/login.jsp").forward(request, response);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         try {
-            Staff user = authService.login(email, password);
+            Utilisateur user = authService.login(email, password);
             
             // Creation de la session
             HttpSession session = request.getSession();
@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 
         } catch (Exception e) {
             request.setAttribute("errorMessage", e.getMessage());
-            request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/JSP/login.jsp").forward(request, response);
         }
     }
 }

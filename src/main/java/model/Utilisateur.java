@@ -8,8 +8,8 @@ import java.util.List;
 import enums.Role;
 
 @Entity
-@Table(name = "staff")
-public class Staff {
+@Table(name = "staff") // Existing PostgreSQL table; the Java entity is Utilisateur.
+public class Utilisateur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,10 +46,10 @@ public class Staff {
     @OneToMany(mappedBy = "specialiste")
     private List<DemandeExpertise> demandesExpertise = new ArrayList<>();
 
-    public Staff() {
+    public Utilisateur() {
     }
 
-    public Staff(String nom, String prenom, String email,
+    public Utilisateur(String nom, String prenom, String email,
                  String password, Role role,
                  String specialite, BigDecimal tarif) {
         this.nom = nom;
