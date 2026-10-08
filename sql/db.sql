@@ -37,6 +37,8 @@ date_naissance DATE NOT NULL,
     telephone VARCHAR(30),
     adresse VARCHAR(255),
 
+    mutuelle VARCHAR(100),
+
     antecedents TEXT,
     allergies TEXT,
     traitements_en_cours TEXT,
@@ -66,6 +68,7 @@ id BIGSERIAL PRIMARY KEY,
 -- =========================
 -- 4. FILE D'ATTENTE
 -- =========================
+
 CREATE TABLE file_attente (
 id BIGSERIAL PRIMARY KEY,
 
@@ -193,7 +196,7 @@ INSERT INTO patients
  telephone, adresse, antecedents, allergies, traitements_en_cours)
 VALUES
 ('Bahmoun', 'Younes', '2004-07-15', 'CNSS001',
- '0611111111', 'Sale', 'Aucun', 'Aucune', 'Aucun'),
+ '0611111111', 'Sale', 'Aucun', 'Aucune', 'Aucun'),statut
 
 ('El Amrani', 'Mohamed', '1990-03-20', 'CNSS002',
  '0622222222', 'Rabat', 'Hypertension', 'Penicilline', 'Traitement hypertension'),
