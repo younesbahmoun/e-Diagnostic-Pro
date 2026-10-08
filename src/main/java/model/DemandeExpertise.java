@@ -21,7 +21,7 @@ public class DemandeExpertise {
 
     @ManyToOne
     @JoinColumn(name = "specialiste_id", nullable = false)
-    private Staff specialiste;
+    private Utilisateur specialiste;
 
     @ManyToOne
     @JoinColumn(name = "creneau_id")
@@ -72,11 +72,11 @@ public class DemandeExpertise {
         this.consultation = consultation;
     }
 
-    public Staff getSpecialiste() {
+    public Utilisateur getSpecialiste() {
         return specialiste;
     }
 
-    public void setSpecialiste(Staff specialiste) {
+    public void setSpecialiste(Utilisateur specialiste) {
         this.specialiste = specialiste;
     }
 
@@ -134,5 +134,9 @@ public class DemandeExpertise {
 
     public void setRecommandations(String recommandations) {
         this.recommandations = recommandations;
+    }
+
+    public LocalDateTime getDateDemande() {
+        return dateDemande;
     }
 }

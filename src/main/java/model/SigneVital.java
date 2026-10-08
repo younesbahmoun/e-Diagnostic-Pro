@@ -17,7 +17,7 @@ public class SigneVital {
     @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
 
-    @Column(name = "tension_arterielle")
+    @Column(name = "tension_arterielle", length = 20)
     private String tensionArterielle;
 
     @Column(name = "frequence_cardiaque")
@@ -104,5 +104,9 @@ public class SigneVital {
 
     public void setTaille(BigDecimal taille) {
         this.taille = taille;
+    }
+
+    public LocalDateTime getDateMesure() {
+        return dateMesure;
     }
 }

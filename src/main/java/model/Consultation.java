@@ -25,7 +25,7 @@ public class Consultation {
 
     @ManyToOne
     @JoinColumn(name = "generaliste_id", nullable = false)
-    private Staff generaliste;
+    private Utilisateur generaliste;
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String motif;
@@ -81,11 +81,11 @@ public class Consultation {
         this.patient = patient;
     }
 
-    public Staff getGeneraliste() {
+    public Utilisateur getGeneraliste() {
         return generaliste;
     }
 
-    public void setGeneraliste(Staff generaliste) {
+    public void setGeneraliste(Utilisateur generaliste) {
         this.generaliste = generaliste;
     }
 
@@ -135,6 +135,10 @@ public class Consultation {
 
     public void setStatut(StatutConsultation statut) {
         this.statut = statut;
+    }
+
+    public LocalDateTime getDateConsultation() {
+        return dateConsultation;
     }
 
     public Set<ActeTechnique> getActes() {

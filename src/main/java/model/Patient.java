@@ -24,12 +24,16 @@ public class Patient {
     @Column(name = "date_naissance", nullable = false)
     private LocalDate dateNaissance;
 
-    @Column(name = "numero_securite_sociale", nullable = false, unique = true)
+    @Column(name = "numero_securite_sociale", nullable = false, unique = true, length = 100)
     private String numeroSecuriteSociale;
 
+    @Column(length = 30)
     private String telephone;
 
     private String adresse;
+
+    @Column(length = 100)
+    private String mutuelle;
 
     @Column(columnDefinition = "TEXT")
     private String antecedents;
@@ -113,6 +117,14 @@ public class Patient {
         this.adresse = adresse;
     }
 
+    public String getMutuelle() {
+        return mutuelle;
+    }
+
+    public void setMutuelle(String mutuelle) {
+        this.mutuelle = mutuelle;
+    }
+
     public String getAntecedents() {
         return antecedents;
     }
@@ -135,5 +147,13 @@ public class Patient {
 
     public void setTraitementsEnCours(String traitementsEnCours) {
         this.traitementsEnCours = traitementsEnCours;
+    }
+
+    public List<SigneVital> getSignesVitaux() {
+        return signesVitaux;
+    }
+
+    public List<Consultation> getConsultations() {
+        return consultations;
     }
 }

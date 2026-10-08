@@ -18,7 +18,7 @@ public class Creneau {
 
     @ManyToOne
     @JoinColumn(name = "specialiste_id", nullable = false)
-    private Staff specialiste;
+    private Utilisateur specialiste;
 
     @Column(nullable = false)
     private LocalDateTime debut;
@@ -40,11 +40,11 @@ public class Creneau {
         return id;
     }
 
-    public Staff getSpecialiste() {
+    public Utilisateur getSpecialiste() {
         return specialiste;
     }
 
-    public void setSpecialiste(Staff specialiste) {
+    public void setSpecialiste(Utilisateur specialiste) {
         this.specialiste = specialiste;
     }
 
